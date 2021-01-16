@@ -11,4 +11,4 @@
 <br />Unit tests: Jest
 <br />E2E tests: Cypress
 <br />A11Y tests: axe-core
-<br />CI/CD: Heroku CI
+<br />CI/CD: Evaluate: (Heroku CI; Octopus https://octopus.com/features)

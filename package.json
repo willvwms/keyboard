@@ -2,7 +2,7 @@
   "name": "keyboard",
   "version": "0.1.0",
   "engines": {
-    "node": "10.x"
+    "node": "13.x"
   },
   "private": true,
   "dependencies": {

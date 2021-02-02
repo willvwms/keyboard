@@ -35,7 +35,8 @@ const KEYS = {
     { 'value': 'w', 'type': 'letter', 'language':'en'},
     { 'value': 'x', 'type': 'letter', 'language':'en'},
     { 'value': 'y', 'type': 'letter', 'language':'en'},
-    { 'value': 'z', 'type': 'letter', 'language':'en'}
+    { 'value': 'z', 'type': 'letter', 'language':'en'},
+    { 'value': ' ', 'type': 'letter', 'language':'en'}
   ],
   "spanish" : [
     { 'value': '1', 'type': 'number', 'language':'es'},

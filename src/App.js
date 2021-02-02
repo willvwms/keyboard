@@ -1,3 +1,4 @@
+import util from 'util';
 import { useState }  from 'react';
 import './App.css';
 import Keyboard from './components/Keyboard';
@@ -8,11 +9,16 @@ import characters from './characters';
 function App() {
 
   const [language, setLanguage] = useState("english");
-  const [userString, setUserString] = useState("placeholder for user input");
+  const [userString, setUserString] = useState("");
 
   function handleLanguageChange(newValue) {
     setLanguage(newValue);
-    console.log(newValue);
+    // console.log(newValue);
+  }
+
+  function handleInput(newValue) {
+    setUserString(userString.concat(newValue));
+    // console.log(newValue);
   }
 
   return (
@@ -21,7 +27,7 @@ function App() {
 
     <OutputDisplay userString={userString} />
     <LanguageSelector language={language} onChange={handleLanguageChange} />
-    <Keyboard id="keyboard_container" language={language} characters={characters} />
+    <Keyboard id="keyboard_container" language={language} characters={characters} onClick={handleInput} />
 
   </div>
   );

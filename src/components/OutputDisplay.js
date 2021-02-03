@@ -10,9 +10,9 @@ function OutputDisplay (props) {
     <div id="output_display">
 
         <Screen userString={userString} />
-        <Button id="copy_btn" value="Copy" dataType="n/a" />
-        <Button id="reset_btn" value="Clear" dataType="n/a" />
-        <Button id="fullscreen_btn" value="Full" dataType="n/a" />
+        <Button id="copy_btn" value="Copy" buttonType="copy" onClick={props.onCopy} />
+        <Button id="reset_btn" value="Clear" buttonType="clear" onClick={props.onClear} />
+        <Button id="fullscreen_btn" value="Full" buttonType="fullScreen" onClick={props.onFullScreen} />
 
     </div>
     );

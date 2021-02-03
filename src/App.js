@@ -16,16 +16,30 @@ function App() {
     // console.log(newValue);
   }
 
+  function handleClear() {
+    setUserString("");
+    // console.log(newValue);
+  }
+
   function handleInput(newValue) {
     setUserString(userString.concat(newValue));
     // console.log(newValue);
+  }
+
+  
+  function handleCopy() {
+    alert("copy!");
+  }
+
+  function handleFullScreen() {
+    alert("full screen!");
   }
 
   return (
   <div id="app_container"> 
   <h1> App Container </h1>    
 
-    <OutputDisplay userString={userString} />
+    <OutputDisplay userString={userString} onClear={handleClear} onCopy={handleCopy} onFullScreen={handleFullScreen} />
     <LanguageSelector language={language} onChange={handleLanguageChange} />
     <Keyboard id="keyboard_container" language={language} characters={characters} onClick={handleInput} />
 

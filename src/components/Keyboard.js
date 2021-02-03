@@ -7,7 +7,7 @@ function Keyboard (props) {
     const keys = props.characters[language];
 
     const buttons = keys.map((item) => 
-        <Button id={`${item.language}_${item.value}`} value={item.value} dataType={item.dataType} onClick={props.onClick} />
+        <Button id={`${item.language}_${item.value}`} value={item.value} buttonType={item.type} onClick={props.onClick} />
     );
 
     return (

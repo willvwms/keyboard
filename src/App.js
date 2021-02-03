@@ -26,11 +26,6 @@ function App() {
     // console.log(newValue);
   }
 
-  
-  function handleCopy() {
-    alert("copy!");
-  }
-
   function handleFullScreen() {
     alert("full screen!");
   }
@@ -39,7 +34,7 @@ function App() {
   <div id="app_container"> 
   <h1> App Container </h1>    
 
-    <OutputDisplay userString={userString} onClear={handleClear} onCopy={handleCopy} onFullScreen={handleFullScreen} />
+    <OutputDisplay userString={userString} onClear={handleClear} onFullScreen={handleFullScreen} />
     <LanguageSelector language={language} onChange={handleLanguageChange} />
     <Keyboard id="keyboard_container" language={language} characters={characters} onClick={handleInput} />
 

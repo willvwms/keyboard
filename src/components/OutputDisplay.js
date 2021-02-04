@@ -12,7 +12,7 @@ function OutputDisplay (props) {
         <Screen userString={userString} />
         <Button id="copy_btn" value="Copy" buttonType="copy" userString={props.userString} />
         <Button id="reset_btn" value="Clear" buttonType="clear" onClick={props.onClear} />
-        <Button id="fullscreen_btn" value="Full" buttonType="fullScreen" onClick={props.onFullScreen} />
+        <Button id="fullscreen_btn" value="Full" buttonType="fullScreen" onFullScreen={props.onFullScreen} />
 
     </div>
     );

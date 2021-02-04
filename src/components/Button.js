@@ -11,6 +11,7 @@ function Button (props) {
 
     const isKey = Boolean(buttonType === "letter" || buttonType === "number");
     const isCopy = (Boolean(buttonType === "copy"));
+    const isFullScreen = (Boolean(buttonType === "fullScreen"));
 
     function handleInput(event) {
         props.onClick(event.target.value);
@@ -37,12 +38,16 @@ function Button (props) {
         console.log(`'${userString}' was copied to the clipboard`);      
     }
     
+    function handleFullScreen () {
+        props.onFullScreen();
+    }
+
     return (
         <button 
             id={id} 
             buttonType={buttonType} 
             value={value} 
-            onClick={isKey ? handleInput : isCopy ? handleCopy : handleOther } 
+            onClick={isKey ? handleInput : isCopy ? handleCopy : isFullScreen ? handleFullScreen : handleOther } 
         >
             {value}
         </button>

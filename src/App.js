@@ -52,9 +52,9 @@ function App() {
   <div id="app_container"> 
   <h1> App Container </h1>
     
-    <button className="button-default" onClick={toggle}>Show Modal</button>
+    {/* <button className="button-default" onClick={toggle}>Show Modal</button> */}
     <Modal isShowing={isShowing} hide={toggle} userString={userString} copy={handleCopy} />
-    <OutputDisplay userString={userString} onClear={handleClear} onFullScreen={handleFullScreen} />
+    <OutputDisplay userString={userString} onClear={handleClear} onFullScreen={toggle} />
     <LanguageSelector language={language} onChange={handleLanguageChange} />
     <Keyboard id="keyboard_container" language={language} characters={characters} onClick={handleInput} />
 

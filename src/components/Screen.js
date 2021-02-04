@@ -7,9 +7,9 @@ function Screen (props) {
     return (
     <div id="screen">
 
-        <text ref={props.screenElementRef} >
+        <p ref={props.screenElementRef} >
             {contents}
-        </text>
+        </p>
 
     </div>
     );

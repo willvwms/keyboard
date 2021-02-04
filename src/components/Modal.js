@@ -27,7 +27,7 @@ const Modal = ({ isShowing, hide, userString, copy }) => isShowing ? ReactDOM.cr
       </div>
     </div>
   
-  </React.Fragment>, document.body
+  </React.Fragment>, document.getElementById('modal-root')
 ) : null;
 
 export default Modal;

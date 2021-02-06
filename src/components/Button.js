@@ -1,3 +1,4 @@
+
 import React from 'react';
 import util from 'util';
 
@@ -36,7 +37,7 @@ function Button (props) {
     function handleToggleModal () {
         props.toggleModal();
     }
-
+    
     return (
         <input 
             type="button"

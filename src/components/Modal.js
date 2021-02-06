@@ -10,13 +10,9 @@ const Modal = ({ isShowing, toggleModal, userString, handleCopy }) => isShowing 
     <div className="modal-wrapper" aria-modal aria-hidden tabIndex={-1} role="dialog">
       <div className="modal">
         <div className="modal-header">
-          
-          <button type="button" className="modal-close-button" data-dismiss="modal" aria-label="Close" onClick={toggleModal}>
-            <span aria-hidden="true">&times;</span>
-          </button>
 
         <Button id="copy_btn_modal" value="Copy" buttonType="copy" userString={userString} handleCopy={handleCopy}/>
-        <Button id="copy_btn_modal" value="Copy" buttonType="copy" userString={userString} handleCopy={handleCopy}/>
+        <Button id="modal_toggle_IN_MODAL" value="&times;" buttonType="toggleModal" userString={userString} toggleModal={toggleModal}/>
 
         </div>
         

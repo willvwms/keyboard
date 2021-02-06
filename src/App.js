@@ -17,21 +17,14 @@ function App() {
 
   function handleLanguageChange(newValue) {
     setLanguage(newValue);
-    // console.log(newValue);
   }
 
   function handleClear() {
     setUserString("");
-    // console.log(newValue);
   }
 
   function handleInput(newValue) {
     setUserString(userString.concat(newValue));
-    // console.log(newValue);
-  }
-
-  function handleFullScreen() {
-    alert("full screen!");
   }
 
   return (
@@ -40,7 +33,7 @@ function App() {
     
     {/* <button className="button-default" onClick={toggle}>Show Modal</button> */}
     <Modal isShowing={isShowing} toggleModal={toggleModal} userString={userString} handleCopy={handleCopy} />
-    <OutputDisplay userString={userString} onClear={handleClear} onFullScreen={toggleModal} handleCopy={handleCopy} />
+    <OutputDisplay userString={userString} onClear={handleClear} toggleModal={toggleModal} handleCopy={handleCopy} />
     <LanguageSelector language={language} onChange={handleLanguageChange} />
     <Keyboard id="keyboard_container" language={language} characters={characters} onClick={handleInput} />
 

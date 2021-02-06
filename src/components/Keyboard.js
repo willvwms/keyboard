@@ -9,7 +9,7 @@ function Keyboard (props) {
 
 
     const buttons = keys.map((item) => 
-        <Button id={`${item.language}_${item.value}`} value={item.value} buttonType={item.type} onClick={props.onClick} />
+        <Button id={`${item.language}_${item.value}`} value={item.value} buttonType={item.type} onClick={props.onClick} handleBackspace={props.handleBackspace} />
     );
 
     return (

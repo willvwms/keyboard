@@ -24,20 +24,23 @@ function Button (props) {
         console.log("fired handleOther");
     }
 
+    // function handleCopy() {
+    //     const temporaryElement = document.createElement('textarea');
+    //     temporaryElement.value = userString;
+    //     temporaryElement.setAttribute('aria-hidden', 'true');
+    //     // temporaryElement.setAttribute('readonly', '');
+    //     // temporaryElement.style.position = 'absolute';
+    //     // temporaryElement.style.left = '-9999px';
+    //     document.body.appendChild(temporaryElement);
+    //     temporaryElement.select();
+    //     document.execCommand('copy');
+    //     document.body.removeChild(temporaryElement);
+    //     console.log(`'${userString}' was copied to the clipboard`);      
+    // }
+
     function handleCopy() {
-        const temporaryElement = document.createElement('textarea');
-        temporaryElement.value = userString;
-        temporaryElement.setAttribute('aria-hidden', 'true');
-        // temporaryElement.setAttribute('readonly', '');
-        // temporaryElement.style.position = 'absolute';
-        // temporaryElement.style.left = '-9999px';
-        document.body.appendChild(temporaryElement);
-        temporaryElement.select();
-        document.execCommand('copy');
-        document.body.removeChild(temporaryElement);
-        console.log(`'${userString}' was copied to the clipboard`);      
+        props.handleCopy(userString);
     }
-    
     function handleFullScreen () {
         props.onFullScreen();
     }

@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Button from './Button';
 
-const Modal = ({ isShowing, hide, userString, copy }) => isShowing ? ReactDOM.createPortal(
+const Modal = ({ isShowing, toggleModal, userString, handleCopy }) => isShowing ? ReactDOM.createPortal(
   
   <React.Fragment>
     
@@ -9,14 +10,9 @@ const Modal = ({ isShowing, hide, userString, copy }) => isShowing ? ReactDOM.cr
     <div className="modal-wrapper" aria-modal aria-hidden tabIndex={-1} role="dialog">
       <div className="modal">
         <div className="modal-header">
-          
-          <button type="button" className="modal-close-button" data-dismiss="modal" aria-label="Close" onClick={hide}>
-            <span aria-hidden="true">&times;</span>
-          </button>
-          
-          <button type="button" className="modal-copy-button" aria-label="Copy" onClick={copy}>
-            <span aria-hidden="true">Copy</span>
-          </button>
+
+        <Button id="copy_btn_modal" value="Copy" buttonType="copy" userString={userString} handleCopy={handleCopy}/>
+        <Button id="modal_toggle_IN_MODAL" value="&times;" buttonType="toggleModal" userString={userString} toggleModal={toggleModal}/>
 
         </div>
         

@@ -7,54 +7,33 @@ import OutputDisplay from './components/OutputDisplay';
 import characters from './characters';
 import Modal from "./components/Modal";
 import useModal from './helpers/useModal';
+import { handleCopy } from './helpers/handlers.js'
 
 function App() {
 
   const [language, setLanguage] = useState("english");
   const [userString, setUserString] = useState("");
-  const {isShowing, toggle} = useModal();
+  const {isShowing, toggleModal} = useModal();
 
   function handleLanguageChange(newValue) {
     setLanguage(newValue);
-    // console.log(newValue);
   }
 
   function handleClear() {
     setUserString("");
-    // console.log(newValue);
   }
 
   function handleInput(newValue) {
     setUserString(userString.concat(newValue));
-    // console.log(newValue);
   }
-
-  function handleFullScreen() {
-    alert("full screen!");
-  }
-
-  function handleCopy() {
-    console.log("fired");
-    const temporaryElement = document.createElement('textarea');
-    temporaryElement.value = userString;
-    temporaryElement.setAttribute('aria-hidden', 'true');
-    // temporaryElement.setAttribute('readonly', '');
-    // temporaryElement.style.position = 'absolute';
-    // temporaryElement.style.left = '-9999px';
-    document.body.appendChild(temporaryElement);
-    temporaryElement.select();
-    document.execCommand('copy');
-    document.body.removeChild(temporaryElement);
-    console.log(`'${userString}' was copied to the clipboard`);      
-}
 
   return (
-  <div id="app_container"> 
+  <div id="app_container" onKeyUp={handlekeyBoardShortcut} > 
   <h1> App Container </h1>
     
     {/* <button className="button-default" onClick={toggle}>Show Modal</button> */}
-    <Modal isShowing={isShowing} hide={toggle} userString={userString} copy={handleCopy} />
-    <OutputDisplay userString={userString} onClear={handleClear} onFullScreen={toggle} />
+    <Modal isShowing={isShowing} toggleModal={toggleModal} userString={userString} handleCopy={handleCopy} />
+    <OutputDisplay userString={userString} onClear={handleClear} toggleModal={toggleModal} handleCopy={handleCopy} />
     <LanguageSelector language={language} onChange={handleLanguageChange} />
     <Keyboard id="keyboard_container" language={language} characters={characters} onClick={handleInput} />
 
@@ -63,3 +42,16 @@ function App() {
 }
 
 export default App;
+
+
+  // window.addEventListener("keydown", function(event){
+  //   // console.log(event);
+  //   if (event.key.match(/[a-z]/i) || event.key.match(/[0-9]/i)) {
+  //     console.log("typed " + event.key);
+  //     handleInput(event.key);
+  //   }
+  //   if (event.which === 32) {
+  //     console.log("typed SPACE");
+  //     handleInput(event.key);
+  //   }  
+  //   }, false);

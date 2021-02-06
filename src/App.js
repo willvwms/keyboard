@@ -19,16 +19,18 @@ function App() {
     setLanguage(newValue);
   }
 
-  function handleClear() {
-    setUserString("");
+  function handleInput(newValue) {
+    console.log("handleInput - before: " + userString);
+    setUserString(userString.concat(newValue));
+    console.log("handleInput - after: " + userString);
   }
 
   function handleBackspace() {
     setUserString(userString.slice(0, -1));
   }
 
-  function handleInput(newValue) {
-    setUserString(userString.concat(newValue));
+  function handleClear() {
+    setUserString("");
   }
 
   return (

@@ -23,19 +23,23 @@ function App() {
     setUserString("");
   }
 
+  function handleBackspace() {
+    setUserString(userString.slice(0, -1));
+  }
+
   function handleInput(newValue) {
     setUserString(userString.concat(newValue));
   }
 
   return (
-  <div id="app_container" onKeyUp={handlekeyBoardShortcut} > 
+  <div id="app_container" > 
   <h1> App Container </h1>
     
     {/* <button className="button-default" onClick={toggle}>Show Modal</button> */}
     <Modal isShowing={isShowing} toggleModal={toggleModal} userString={userString} handleCopy={handleCopy} />
     <OutputDisplay userString={userString} onClear={handleClear} toggleModal={toggleModal} handleCopy={handleCopy} />
     <LanguageSelector language={language} onChange={handleLanguageChange} />
-    <Keyboard id="keyboard_container" language={language} characters={characters} onClick={handleInput} />
+    <Keyboard id="keyboard_container" language={language} characters={characters} onClick={handleInput} handleBackspace={handleBackspace} />
 
   </div>
   );

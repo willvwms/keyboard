@@ -13,10 +13,11 @@ function Button (props) {
     const isKey = Boolean(buttonType === "letter" || buttonType === "number");
     const isCopy = (Boolean(buttonType === "copy"));
     const isToggleModal = (Boolean(buttonType === "toggleModal"));
+    const isBackspace = (Boolean(buttonType === "backspace"));
 
     function handleInput(event) {
         props.onClick(event.target.value);
-        console.log(util.inspect(event.target.value));
+        // console.log(util.inspect(event.target.value));
     }
 
     function handleOther() {
@@ -37,6 +38,11 @@ function Button (props) {
     function handleToggleModal () {
         props.toggleModal();
     }
+
+    function handleBackspace () {
+        console.log("fired handleBackspace")
+        props.handleBackspace();
+    }
     
     return (
         <input 
@@ -44,7 +50,7 @@ function Button (props) {
             id={id} 
             buttonType={buttonType} 
             value={value} 
-            onClick={isKey ? handleInput : isCopy ? handleCopy : isToggleModal ? handleToggleModal : handleOther } 
+            onClick={isKey ? handleInput : isCopy ? handleCopy : isToggleModal ? handleToggleModal : isBackspace ? handleBackspace : handleOther } 
         />
             
         );

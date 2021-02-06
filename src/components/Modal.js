@@ -16,10 +16,14 @@ const Modal = ({ isShowing, toggleModal, userString, handleCopy }) => isShowing 
 
         </div>
         
-        <p>
-          {userString}
-        </p>
-  
+        <div id="screen_in_MODAL" style= {{ "white-space": "pre-line" }} >
+
+            <p >
+                {userString}
+            </p>
+
+        </div>
+
       </div>
     </div>
   

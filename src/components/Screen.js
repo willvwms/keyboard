@@ -5,9 +5,9 @@ function Screen (props) {
     const contents = props.userString;
     
     return (
-    <div id="screen">
+    <div id="screen" style= {{ "white-space": "pre-line" }} >
 
-        <p ref={props.screenElementRef} >
+        <p >
             {contents}
         </p>
 

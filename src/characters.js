@@ -38,6 +38,7 @@ const KEYS = {
     { 'value': 'z', 'type': 'letter', 'language':'en', 'keyCode':'90'},
     { 'value': ' ', 'type': 'letter', 'language':'en', 'keyCode':'32'},
     { 'value': 'backspace', 'type': 'backspace', 'language':'en', 'keyCode':'8'},
+    { 'value': 'enter', 'type': 'enter', 'language':'en', 'keyCode':'186'}
   ],
   "spanish" : [
     { 'value': '1', 'type': 'number', 'language':'es'},

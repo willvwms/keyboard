@@ -43,14 +43,14 @@ function Button (props) {
     }
 
     return (
-        <button 
+        <input 
+            type="button"
             id={id} 
             buttonType={buttonType} 
             value={value} 
             onClick={isKey ? handleInput : isCopy ? handleCopy : isFullScreen ? handleFullScreen : handleOther } 
-        >
-            {value}
-        </button>
+        />
+            
         );
 }
 

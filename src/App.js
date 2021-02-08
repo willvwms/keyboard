@@ -39,7 +39,7 @@ function App() {
     
     {/* <button className="button-default" onClick={toggle}>Show Modal</button> */}
     <Modal isShowing={isShowing} toggleModal={toggleModal} userString={userString} handleCopy={handleCopy} />
-    <OutputDisplay userString={userString} onClear={handleClear} toggleModal={toggleModal} handleCopy={handleCopy} />
+    <OutputDisplay userString={userString} handleClear={handleClear} toggleModal={toggleModal} handleCopy={handleCopy} />
     <LanguageSelector language={language} onChange={handleLanguageChange} />
     <Keyboard id="keyboard_container" language={language} characters={characters} onClick={handleInput} handleBackspace={handleBackspace} />
 

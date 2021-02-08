@@ -11,6 +11,7 @@ function Button (props) {
 
     const isKey = Boolean(buttonType === "letter" || buttonType === "number");
     const isCopy = (Boolean(buttonType === "copy"));
+    const isClear = (Boolean(buttonType === "clear"));
     const isToggleModal = (Boolean(buttonType === "toggleModal"));
     const isBackspace = (Boolean(buttonType === "backspace"));
     const isEnter = (Boolean(buttonType === "enter"));
@@ -32,7 +33,11 @@ function Button (props) {
     function handleCopy() {
         props.handleCopy(userString);
     }
-    
+
+    function handleClear() {
+        props.handleClear();
+    }
+
     function handleToggleModal () {
         props.toggleModal();
     }
@@ -47,7 +52,7 @@ function Button (props) {
             id={id} 
             buttonType={buttonType} 
             value={value} 
-            onClick={isKey ? handleInput : isCopy ? handleCopy : isToggleModal ? handleToggleModal : isBackspace ? handleBackspace : isEnter ? handleEnter : handleOther } 
+            onClick={isKey ? handleInput : isClear ? handleClear : isCopy ? handleCopy : isToggleModal ? handleToggleModal : isBackspace ? handleBackspace : isEnter ? handleEnter : handleOther } 
         />
             
         );

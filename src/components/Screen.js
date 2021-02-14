@@ -7,9 +7,9 @@ function Screen (props) {
     return (
     <div id="screen" style= {{ "white-space": "pre-line" }} >
 
-        <p >
+        <pre >
             {contents}
-        </p>
+        </pre>
 
     </div>
     );

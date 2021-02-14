@@ -48,16 +48,3 @@ function App() {
 }
 
 export default App;
-
-
-  // window.addEventListener("keydown", function(event){
-  //   // console.log(event);
-  //   if (event.key.match(/[a-z]/i) || event.key.match(/[0-9]/i)) {
-  //     console.log("typed " + event.key);
-  //     handleInput(event.key);
-  //   }
-  //   if (event.which === 32) {
-  //     console.log("typed SPACE");
-  //     handleInput(event.key);
-  //   }  
-  //   }, false);

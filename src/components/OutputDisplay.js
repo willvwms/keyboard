@@ -12,7 +12,7 @@ function OutputDisplay (props) {
         <Screen userString={userString} />
         <Button id="copy_btn" value="Copy" buttonType="copy" userString={props.userString} handleCopy={props.handleCopy}/>
         <Button id="clear_btn" value="Clear" buttonType="clear" handleClear={props.handleClear} />
-        <Button id="modal_toggle_IN_DISPLAY" value="Full Screen" buttonType="toggleModal" toggleModal={props.toggleModal} />
+        <Button id="openFullScreen" value="Full Screen" buttonType="toggleModal" toggleModal={props.toggleModal} />
 
     </div>
     );

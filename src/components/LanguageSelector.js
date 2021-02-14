@@ -2,19 +2,19 @@ import React  from 'react';
 
 function LanguageSelector(props) {
 
+  const languageOptions = Object.keys(props.languages).map((language) => <option value={language}>{language}</option>);
 
-  function handleChange(event) {
-    props.onChange(event.target.value);
+  function handleLanguageChange(event) {
+    props.handleLanguageChange(event.target.value);
   }
 
   return (
     <select
-    language={props.language}
-    onChange={handleChange} 
+    currentLanguage={props.currentLanguage}
+    onChange={handleLanguageChange} 
     >
-      <option value="english">English</option>
-      <option value="spanish">Español</option>
-      <option value="hindi">हिन्दी</option>
+      {languageOptions}
+
     </select>
   );
 }

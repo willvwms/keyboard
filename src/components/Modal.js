@@ -12,7 +12,7 @@ const Modal = ({ isShowing, toggleModal, userString, handleCopy }) => isShowing 
         <div className="modal-header">
 
         <Button id="copy_btn_modal" value="Copy" buttonType="copy" userString={userString} handleCopy={handleCopy}/>
-        <Button id="closeFullScreen" value="&times;" buttonType="toggleModal" userString={userString} toggleModal={toggleModal}/>
+        <Button id="closeFullScreen" buttonType="toggleModal" userString={userString} toggleModal={toggleModal}/>
 
         </div>
         

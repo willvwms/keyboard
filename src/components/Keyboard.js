@@ -1,15 +1,16 @@
 import React from 'react';
 import Button from './Button';
+import LanguageSelector from './LanguageSelector';
 import util from 'util';
 // import { SpaceIcon } from '../assets/icons.js'
 
 function Keyboard (props) {
     
-    const language = props.language;
-    const keys = props.characters[language];
+    const currentLanguage = props.currentLanguage;
+    const characters = props.languages[currentLanguage];
 
-    const buttons = keys.map((item) => 
-        <Button id={`${item.language}_${item.value}`} value={item.value} buttonType={item.type} onClick={props.onClick} />
+    const buttons = characters.map((item) => 
+        <Button id={`${item.language_abbr}_${item.value}`} value={item.value} buttonType={item.type} onClick={props.onClick} />
     );
 
     buttons.push(<Button id="space" value=' ' buttonType="character" onClick={props.onClick} />)
@@ -19,6 +20,9 @@ function Keyboard (props) {
     return (
     <div id="keyboard_container" >
 
+        <h2> Input/Keyboard </h2>
+
+        <LanguageSelector currentLanguage={currentLanguage} languages={props.languages} handleLanguageChange={props.handleLanguageChange} />
         {buttons}
 
     </div>

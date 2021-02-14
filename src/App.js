@@ -36,10 +36,8 @@ function App() {
   <div id="keyboard-main-content" > 
   <h1> Virtual Keyboard </h1>
     
-    {/* <button className="button-default" onClick={toggle}>Show Modal</button> */}
     <Modal isShowing={isShowing} toggleModal={toggleModal} userString={userString} handleCopy={handleCopy} />
     <OutputDisplay userString={userString} handleClear={handleClear} toggleModal={toggleModal} handleCopy={handleCopy} />
-    {/* <LanguageSelector language={language} onChange={handleLanguageChange} /> */}
     <Keyboard id="keyboard_container" currentLanguage={currentLanguage} handleLanguageChange={handleLanguageChange} languages={languages} onClick={handleInput} handleBackspace={handleBackspace} />
 
   </div>

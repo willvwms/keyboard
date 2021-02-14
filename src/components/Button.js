@@ -53,7 +53,6 @@ function Button (props) {
 
     return (
         <button 
-            // type="button"
             id={id} 
             buttonType={buttonType} 
             value={value} 

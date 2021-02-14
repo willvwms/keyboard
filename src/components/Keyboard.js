@@ -2,7 +2,6 @@ import React from 'react';
 import Button from './Button';
 import LanguageSelector from './LanguageSelector';
 import util from 'util';
-// import { SpaceIcon } from '../assets/icons.js'
 
 function Keyboard (props) {
     
